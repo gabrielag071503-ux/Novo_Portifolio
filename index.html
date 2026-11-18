@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Gabriel Araújo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body id="topo">
+    <input type="checkbox" id="check-menu" class="check-menu">
+    <label for="check-menu" class="btn-menu-mobile">&#9776;</label>
+
+    <nav class="menu">
+        <a href="#topo">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#conhecimentos">Conhecimentos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+        <button id="btn-tema" type="button" class="btn btn-tema" aria-pressed="false">Alternar Tema</button>
+    </nav>
+
+    <header class="cabecalho">
+        <h1>Gabriel Araújo</h1>
+        <p>Estudante de full-stack em formação</p>
+    </header>
+
+    <div class="conteudo-sobreposto">
+        <main>
+            <section id="sobre" class="secao">
+                <h2>Sobre Mim</h2>
+                <p>Estudante de desenvolvimento Full-Stack construindo minha base no front-end. Atualmente, dedico meu tempo a criar interfaces limpas com HTML, CSS e JavaScript, evoluindo a qualidade do meu código a cada novo projeto.</p>
+                
+                <p id="sobre-mais" class="oculto" hidden>
+                    Tenho foco em aprender boas práticas de acessibilidade, manipulação de DOM e arquitetura CSS. Meu objetivo é dominar o ecossistema JavaScript completo, integrando futuramente soluções em Node.js e React.
+                </p>
+                
+                <button id="btn-mostrar-mais" type="button" aria-expanded="false" aria-controls="sobre-mais" class="btn btn-secundario">
+                    Mostrar mais
+                </button>
+            </section>
+
+            <section id="conhecimentos" class="secao">
+                <h2>Conhecimentos</h2>
+                <div class="tags-conhecimentos">
+                    <span class="tag">HTML</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Git e GitHub</span>
+                </div>
+            </section>
+
+            <section id="habilidades" class="secao">
+                <h2>Tabela de Habilidades</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tecnologia</th>
+                                <th>Competências Práticas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML</td>
+                                <td>Criação de formulários avançados, uso de tags semânticas (header, nav, main, section) e aplicação de atributos de acessibilidade (ARIA).</td>
+                            </tr>
+                            <tr>
+                                <td>CSS</td>
+                                <td>Construção de layouts responsivos utilizando Flexbox e Grid, e estruturação de temas dinâmicos (claro/escuro) com CSS Variables.</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                                <td>Manipulação do DOM, controle de eventos, validação customizada de formulários e lógica condicional.</td>
+                            </tr>
+                            <tr>
+                                <td>Git e GitHub</td>
+                                <td>Versionamento de código, gestão de commits e publicação de projetos.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="projetos" class="secao">
+                <h2>Projetos</h2>
+
+                <div class="painel-controle">
+                    <div class="grupo-filtro">
+                        <label for="filtro-categoria" style="margin-top: 0;">Filtrar por Categoria:</label>
+                        <select id="filtro-categoria" style="margin-top: 5px;">
+                            <option value="todos">Todos</option>
+                            <option value="web">Web</option>
+                            <option value="mobile">Mobile</option>
+                        </select>
+                    </div>
+                    <p id="contador-projetos" class="contador-badge">Projetos visíveis: <span>3</span></p>
+                </div>
+
+                <p id="status-portfolio" role="status" class="status-mensagem"></p>
+
+                <div class="cards" id="container-cards">
+                    <!-- CARD 1 -->
+                    <article class="card projeto" data-categoria="web">
+                        <img src="./img/formula1.png" alt="Site sobre Formula1" class="img-projeto">
+                        <div class="info-card">
+                            <h3>Site sobre Formula1</h3>
+                            <p><strong>Desafio:</strong> Desenvolver uma interface temática e organizada para apresentar dados da minha equipe favorita.</p>
+                            <p><strong>Implementação:</strong> Estruturado com HTML Semântico e estilizado utilizando conceitos de Flexbox no CSS.</p>
+                            <p><strong>Aprendizado:</strong> Prática em estruturação de pastas, importação de imagens e organização de código.</p>
+                            <div class="acoes-card">
+                                <a href="https://github.com/gabrielag071503-ux?tab=repositories" class="btn btn-primario" target="_blank">Ver projeto</a>
+                                <a href="https://github.com/gabrielag071503-ux/projeto_formula1" class="btn btn-secundario" target="_blank">Ver código</a>
+                                <button type="button" class="btn btn-perigo remover">Remover</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 2 -->
+                    <article class="card projeto" data-categoria="web">
+                        <img src="./img/portifolio.png" alt="Portfólio pessoal" class="img-projeto">
+                        <div class="info-card">
+                            <h3>Portfólio pessoal</h3>
+                            <p><strong>Desafio:</strong> Criar uma vitrine profissional para exibir minhas habilidades e projetos de forma atraente.</p>
+                            <p><strong>Implementação:</strong> Uso de CSS Grid para responsividade, CSS Variables para tema escuro e JS para validações.</p>
+                            <p><strong>Aprendizado:</strong> Aprofundamento em manipulação do DOM e acessibilidade (a11y).</p>
+                            <div class="acoes-card">
+                                <a href="https://github.com/gabrielag071503-ux?tab=repositories" class="btn btn-primario" target="_blank">Ver projeto</a>
+                                <a href="#" class="btn btn-secundario" target="_blank">Ver código</a>
+                                <button type="button" class="btn btn-perigo remover">Remover</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 3 -->
+                    <article class="card projeto" data-categoria="web">
+                        <img src="./img/cafeteria.png" alt="Site de uma Cafeteria" class="img-projeto">
+                        <div class="info-card">
+                            <h3>Site de uma Cafeteria</h3>
+                            <p><strong>Desafio:</strong> Construir uma landing page responsiva simulando o ambiente digital de uma cafeteria local.</p>
+                            <p><strong>Implementação:</strong> HTML e CSS focados em alinhamentos precisos e contraste de cores agradável.</p>
+                            <p><strong>Aprendizado:</strong> Refinamento do modelo de caixas (Box Model) e espaçamentos (margin/padding).</p>
+                            <div class="acoes-card">
+                                <a href="https://github.com/gabrielag071503-ux?tab=repositories" class="btn btn-primario" target="_blank">Ver projeto</a>
+                                <a href="https://github.com/gabrielag071503-ux/Projeto_cafeteria_HTML_Css" class="btn btn-secundario" target="_blank">Ver código</a>
+                                <button type="button" class="btn btn-perigo remover">Remover</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="box-cadastro">
+                    <h3>Cadastrar Novo Projeto</h3>
+                    <form id="form-cadastro-projeto" novalidate>
+                        <label for="nome-projeto">Nome do projeto</label>
+                        <input type="text" id="nome-projeto" name="nome" required minlength="3" placeholder="Ex: App de Tarefas">
+
+                        <label for="categoria-projeto">Categoria</label>
+                        <select id="categoria-projeto" name="categoria">
+                            <option value="web">Web</option>
+                            <option value="mobile">Mobile</option>
+                        </select>
+
+                        
+                        <button type="submit" class="btn btn-primario" style="margin-top: 15px;">Adicionar Projeto</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- FORMULÁRIO DE CONTATO -->
+            <section id="contato" class="secao">
+                <h2>Contato</h2>
+                <form id="form-contato" novalidate>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome">
+                    
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="motivo">Motivo do contato</label>
+                    <select id="motivo" name="motivo">
+                        <option value="" disabled selected>Selecione um motivo...</option>
+                        <option value="profissional">Oportunidade profissional</option>
+                        <option value="freelance">Projeto freelance</option>
+                        <option value="outro">Outro</option>
+                    </select>
+
+                    <div id="grupo-assunto" class="oculto" style="display: flex; flex-direction: column;">
+                        <label for="assunto">Assunto adicional</label>
+                        <input type="text" id="assunto" name="assunto">
+                    </div>
+                    
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                    
+                    <small style="text-align: right; margin-top: 5px; color: #64748b;">
+                        Caracteres: <span id="contador">0</span> / 1000
+                    </small>
+                    
+                    
+                    <button type="submit" class="btn btn-primario" style="margin-top: 15px;">Enviar mensagem</button>
+                    <p id="mensagem-validacao" class="status-mensagem" style="margin-top: 15px;" role="alert"></p>
+                </form>
+            </section>
+        </main>
+
+        <aside class="extra">
+            <h2>Informações extras</h2>
+            <p>Objetivo atual: desenvolver meus primeiros projetos Front-End e me tornar um desenvolvedor full-stack.</p>
+            <p style="margin-top: 10px;">Redes sociais profissionais:</p>
+            <ul style="margin-left: 20px; margin-top: 5px;">
+                <li><a href="https://github.com/gabrielag071503-ux" target="_blank" style="color: var(--cor-primaria); font-weight: bold;">Meu GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/gabriel-gon%C3%A7alves-37481a3b6/" target="_blank" style="color: var(--cor-primaria); font-weight: bold;">Meu LinkedIn</a></li>
+            </ul>
+        </aside>
+
+        <footer>
+            <p>Portfólio de Gabriel Araújo Gonçalves - 2026</p>
+            <p>Desenvolvido como atividade da disciplina de Programação Front-End.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
